@@ -148,32 +148,32 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-document.addEventListener("DOMContentLoaded", function() {
-    var productTitle = localStorage.getItem("productTitle");
-    var productDetails = JSON.parse(localStorage.getItem("productDetails"));
-    var productPrice = localStorage.getItem("productPrice");
-    var imagePath = localStorage.getItem("imagePath");
-    var productTitleElement = document.querySelector(".product-detail-title");
-    productTitleElement.textContent = productTitle;
-    var productDetailsElements = document.querySelectorAll(".product-detail-advance-text");
-    productDetails.forEach(function(detail, index) {
-        var detailElement = document.createElement("p");
-        detailElement.textContent = detail;
-        var productDetailElement = productDetailsElements[index];
-        productDetailElement.appendChild(detailElement);
-    });
-    var productPriceElement = document.querySelector(".product-detail-cart-money");
-    productPriceElement.textContent = productPrice;
-    var imageElement = document.querySelector(".product-image-main img");
-    var imageElementextra = document.querySelector(".product-image-extra-small img");
-    imageElement.src = imagePath;
-    imageElementextra.src = imagePath;
-    const productItem = document.querySelector('.product-list');
+// document.addEventListener("DOMContentLoaded", function() {
+//     var productTitle = localStorage.getItem("productTitle");
+//     var productDetails = JSON.parse(localStorage.getItem("productDetails"));
+//     var productPrice = localStorage.getItem("productPrice");
+//     var imagePath = localStorage.getItem("imagePath");
+//     var productTitleElement = document.querySelector(".product-detail-title");
+//     productTitleElement.textContent = productTitle;
+//     var productDetailsElements = document.querySelectorAll(".product-detail-advance-text");
+//     productDetails.forEach(function(detail, index) {
+//         var detailElement = document.createElement("p");
+//         detailElement.textContent = detail;
+//         var productDetailElement = productDetailsElements[index];
+//         productDetailElement.appendChild(detailElement);
+//     });
+//     var productPriceElement = document.querySelector(".product-detail-cart-money");
+//     productPriceElement.textContent = productPrice;
+//     var imageElement = document.querySelector(".product-image-main img");
+//     var imageElementextra = document.querySelector(".product-image-extra-small img");
+//     imageElement.src = imagePath;
+//     imageElementextra.src = imagePath;
+//     const productItem = document.querySelector('.product-list');
     
-    // productItem.getAttribute = productId;
-    // console.log(carouselItem)
+//     // productItem.getAttribute = productId;
+//     // console.log(carouselItem)
     
-});
+// });
 let iconcart = document.querySelector('.cart');
 let listProductHTML = document.querySelector('.carousel-item');
 let listProducts = [];
