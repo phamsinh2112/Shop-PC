@@ -144,6 +144,7 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem("productPrice", productPrice);
             localStorage.setItem("imagePath", imagePath);
             window.location.href = "/product.html";
+            
         });
     });
 });
@@ -167,25 +168,90 @@ document.addEventListener("DOMContentLoaded", function() {
     var imageElementextra = document.querySelector(".product-image-extra-small img");
     imageElement.src = imagePath;
     imageElementextra.src = imagePath;
+    const productItem = document.querySelector('.product-list');
+    
+    // productItem.getAttribute = productId;
+    // console.log(carouselItem)
     
 });
-const addToCartButtons = document.querySelector('.product-detail-cart-btn');
+let iconcart = document.querySelector('.cart');
+let listProductHTML = document.querySelector('.carousel-item');
+let listProducts = [];
 
-addToCartButtons.addEventListener('click', addToCart);
 
-function addToCart() {
-    // Get the product details
-    const productTitle = document.querySelector('.product-detail-title').textContent;
-    const productPrice = document.querySelector('.product-detail-cart-money').textContent;
-  
-    // Access the cart properties and update them
-    const cartTitle = cart.productTitle || '';
-    const cartPrice = cart.productPrice || 0;
-  
-    cart.productTitle = cartTitle + productTitle + '\n';
-    cart.productPrice = cartPrice + parseFloat(productPrice.replace(',', '.'));
-  
-    // Clear the input values or update the cart total, etc.
-  }
+const addDataToHTML = () => {
+    listProductHTML.innerHTML = '';
+    if(listProductHTML.length > 0) {
+        listProductHTML.forEach(product => {
+            let newProduct = document.createElement('div');
+            newProduct.classList.add('carousel-product');
+            newProduct.innerHTML = `
+                <a href="/product.html" class="carousel-product-link">
+                    <div class="carousel-product-body">
+                        <div class="carousel-product-body-img">
+                            <img class="image-product" src="${product.image}"
+                        <div class="carousel-product-body-container">
+                            <div class="carousel-product-body-title">
+                                <h3>${product.name}</h3>
+                            </div>
+                            <div class="carousel-product-body-text">                       
+                                <div class="s_col_no_bgcolor">
+                                    <div class="carousel-icon">
+                                        <i class="fa-solid fa-puzzle-piece"></i>
+                                    </div>
+                                    <div class="carousel-text">
+                                        <p>Nvidia GeForce RTX 4070</p>
+                                    </div>                                               
+                                </div>
+                                <div class="s_col_no_bgcolor">
+                                    <div class="carousel-icon">
+                                        <i class="fa-solid fa-dice"></i>
+                                    </div>
+                                    <div class="carousel-text">
+                                        <p>AMD Ryzen 7 5700X</p>
+                                    </div>  
+                                </div>
+                                <div class="s_col_no_bgcolor">
+                                    <div class="carousel-icon">
+                                        <i class="fa-brands fa-playstation"></i>
+                                    </div>
+                                    <div class="carousel-text">
+                                        <p>Corsair RGB Vengeance 2x8GB 3200Mhz</p>
+                                    </div>  
+                                </div>
+                                <div class="s_col_no_bgcolor">
+                                    <div class="carousel-icon">
+                                        <i class="fa-solid fa-hand-fist"></i>
+                                    </div>
+                                    <div class="carousel-text">
+                                        <p>M2 NVMhz</p>
+                                    </div>  
+                                </div>
+                            </div>
+                            <div class="carousel-product-body-bot">
+                                <div class="carousel-product-body-bot-money">
+                                    <span>1.374,92 €</span>
+                                </div>
+                                <div class="carousel-product-body-bot-learn">
+                                    Learn more...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            `;
+            listProductHTML.appendChild(newProduct);
+        })
+    }
+}
+const initApp = () => {
+    fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+        listProducts = data;
+        addDataToHTML();
+    })
+}
+initApp();
 
 

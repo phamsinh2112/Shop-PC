@@ -60,6 +60,20 @@
     text-decoration: none;
     display: flex;
     color: rgb(255, 255, 255);
+    span {
+        width: 25px;
+        display: inline;
+        font-size: 1.2rem;
+        text-align: center;
+        height: 25px;
+        background-color: $main-color;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        right: -5px;
+    }
 }
 .login {
     align-items: center;

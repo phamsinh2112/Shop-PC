@@ -1,0 +1,57 @@
+[
+    {
+        "id":1,
+        "name": "PC Atlas GFORCE RTX 3050",
+        "price":805.65,
+        "image": "/image/pc5.jpg"
+    },
+    {
+        "id":2,
+        "name": "PC KRAKEN GEFORCE RTX® 4090",
+        "price":805.65,
+        "image": "/image/pc6.webp"
+    },
+    {
+        "id":3,
+        "name": "PC SIBERIA RTX 4070 Ti WHITE",
+        "price":805.65,
+        "image": "/image/pc7.webp"
+    },
+    {
+        "id":4,
+        "name": "PC BlackHawk AMD RX 7900 XT",
+        "price":805.65,
+        "image": "/image/pc8.png"
+    },
+    {
+        "id":5,
+        "name": "PC Savannah by MSI RTX® 4060 Ti",
+        "price":805.65,
+        "image": "/image/pc9.webp"
+    },
+    {
+        "id":6,
+        "name": "PC Atlas GFORCE RTX 3050",
+        "price":805.65,
+        "image": "/image/pc5.jpg"
+    },
+    {
+        "id":7,
+        "name": "PC Atlas GFORCE RTX 3050",
+        "price":805.65,
+        "image": "/image/pc5.jpg"
+    },
+    {
+        "id":8,
+        "name": "PC Atlas GFORCE RTX 3050",
+        "price":805.65,
+        "image": "/image/pc5.jpg"
+    },
+    {
+        "id":9,
+        "name": "PC Atlas GFORCE RTX 3050",
+        "price":805.65,
+        "image": "/image/pc5.jpg"
+    }
+    
+]

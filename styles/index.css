@@ -110,6 +110,20 @@
   display: flex;
   color: rgb(255, 255, 255);
 }
+.cart-link span {
+  width: 25px;
+  display: inline;
+  font-size: 1.2rem;
+  text-align: center;
+  height: 25px;
+  background-color: #ffee00;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+}
 
 .login {
   align-items: center;
@@ -485,7 +499,7 @@
 }
 
 .carousel-product {
-  width: 500px;
+  width: 370px;
   height: 550px;
   display: flex;
   margin: 0 10px;
@@ -1976,6 +1990,11 @@
 }
 .breadcrumbs p {
   font-size: 1.2rem;
+}
+
+.product-list {
+  display: flex;
+  padding: 30px 30px;
 }
 
 .product {
