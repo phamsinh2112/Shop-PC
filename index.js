@@ -126,67 +126,68 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-document.addEventListener("DOMContentLoaded", function() {
-    var productLinks = document.querySelectorAll(".carousel-product-link");
-    productLinks.forEach(function(productLink) {
-        productLink.addEventListener("click", function(event) {
-            event.preventDefault(); 
-            var productTitle = this.querySelector(".carousel-product-body-title h3").textContent;
-            var productDetails = this.querySelectorAll(".carousel-text p");
-            var productImage = this.querySelector(".image-product")
-            var productDetailsArray = Array.from(productDetails).map(function(detail) {
-                return detail.textContent;
-            });
-            var imagePath = productImage.getAttribute("src");
-            var productPrice = this.querySelector(".carousel-product-body-bot-money span").textContent;
-            localStorage.setItem("productTitle", productTitle);
-            localStorage.setItem("productDetails", JSON.stringify(productDetailsArray));
-            localStorage.setItem("productPrice", productPrice);
-            localStorage.setItem("imagePath", imagePath);
-            window.location.href = "/product.html";
-            
-        });
-    });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    var productTitle = localStorage.getItem("productTitle");
-    var productDetails = JSON.parse(localStorage.getItem("productDetails"));
-    var productPrice = localStorage.getItem("productPrice");
-    var imagePath = localStorage.getItem("imagePath");
-    var productTitleElement = document.querySelector(".product-detail-title");
-    productTitleElement.textContent = productTitle;
-    var productDetailsElements = document.querySelectorAll(".product-detail-advance-text");
-    productDetails.forEach(function(detail, index) {
-        var detailElement = document.createElement("p");
-        detailElement.textContent = detail;
-        var productDetailElement = productDetailsElements[index];
-        productDetailElement.appendChild(detailElement);
-    });
-    var productPriceElement = document.querySelector(".product-detail-cart-money");
-    productPriceElement.textContent = productPrice;
-    var imageElement = document.querySelector(".product-image-main img");
-    var imageElementextra = document.querySelector(".product-image-extra-small img");
-    imageElement.src = imagePath;
-    imageElementextra.src = imagePath;
-    const productItem = document.querySelector('.product-list');
+// document.addEventListener("DOMContentLoaded", function() {
+//     var productLinks = document.querySelectorAll(".carousel-product-link");
+//     productLinks.forEach(function(productLink) {
+//         productLink.addEventListener("click", function(event) {
+//             event.preventDefault(); 
+//             var productTitle = this.querySelector(".carousel-product-body-title h3").textContent;
+//             var productDetails = this.querySelectorAll(".carousel-text p");
+//             var productImage = this.querySelector(".image-product")
+//             var productDetailsArray = Array.from(productDetails).map(function(detail) {
+//                 return detail.textContent;
+//             });
+//             var imagePath = productImage.getAttribute("src");
+//             var productPrice = this.querySelector(".carousel-product-body-bot-money span").textContent;
+//             localStorage.setItem("productTitle", productTitle);
+//             localStorage.setItem("productDetails", JSON.stringify(productDetailsArray));
+//             localStorage.setItem("productPrice", productPrice);
+//             localStorage.setItem("imagePath", imagePath);
+//             window.location.href = "/product.html";
+//         });
+//     });
+// });
+// document.addEventListener("DOMContentLoaded", function() {
+//     var productTitle = localStorage.getItem("productTitle");
+//     var productDetails = JSON.parse(localStorage.getItem("productDetails"));
+//     var productPrice = localStorage.getItem("productPrice");
+//     var imagePath = localStorage.getItem("imagePath");
+//     var productTitleElement = document.querySelector(".product-detail-title");
+//     productTitleElement.textContent = productTitle;
+//     var productDetailsElements = document.querySelectorAll(".product-detail-advance-text");
+//     productDetails.forEach(function(detail, index) {
+//         var detailElement =     document.createElement("p");
+//         detailElement.textContent = detail;
+//         var productDetailElement = productDetailsElements[index];
+//         productDetailElement.appendChild(detailElement);
+//     });
+//     var productPriceElement = document.querySelector(".product-detail-cart-money");
+//     productPriceElement.textContent = productPrice;
+//     var imageElement = document.querySelector(".product-image-main img");
+//     var imageElementextra = document.querySelector(".product-image-extra-small img");
+//     imageElement.src = imagePath;
+//     imageElementextra.src = imagePath;
+//     const productItem = document.querySelector('.product-list');
     
-    // productItem.getAttribute = productId;
-    // console.log(carouselItem)
+//     // productItem.getAttribute = productId;
+//     // console.log(carouselItem)
     
-});
+// });
 let iconcart = document.querySelector('.cart');
 let listProductHTML = document.querySelector('.carousel-item');
 let listProducts = [];
-
+let productHTML = document.querySelector('.product-list');
+let products = [];
 
 const addDataToHTML = () => {
     listProductHTML.innerHTML = '';
-    if(listProductHTML.length > 0) {
-        listProductHTML.forEach(product => {
+    if(listProducts.length > 0) {
+        listProducts.forEach(product => {
             let newProduct = document.createElement('div');
             newProduct.classList.add('carousel-product');
+            newProduct.dataset.id = product.id;
             newProduct.innerHTML = `
-                <a href="/product.html" class="carousel-product-link">
+                <a href="product.html" class="carousel-product-link">
                     <div class="carousel-product-body">
                         <div class="carousel-product-body-img">
                             <img class="image-product" src="${product.image}"
@@ -230,7 +231,7 @@ const addDataToHTML = () => {
                             </div>
                             <div class="carousel-product-body-bot">
                                 <div class="carousel-product-body-bot-money">
-                                    <span>1.374,92 €</span>
+                                    <span>$ ${product.price}</span>
                                 </div>
                                 <div class="carousel-product-body-bot-learn">
                                     Learn more...
@@ -244,6 +245,8 @@ const addDataToHTML = () => {
         })
     }
 }
+
+
 const initApp = () => {
     fetch('products.json')
     .then(response => response.json())

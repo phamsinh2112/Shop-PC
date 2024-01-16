@@ -27,12 +27,6 @@
   height: 200px;
 }
 
-.text-center {
-  text-align: center;
-  width: 700px;
-  margin-left: 200px;
-}
-
 .none {
   display: none;
 }
@@ -479,6 +473,9 @@
 
 .text-sell {
   padding: 10px 20px;
+  text-align: center;
+  width: 700px;
+  margin-left: 200px;
 }
 
 .text-white {
@@ -496,13 +493,14 @@
 .carousel-item {
   padding: 20px 40px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .carousel-product {
-  width: 370px;
+  width: 330px;
   height: 550px;
   display: flex;
-  margin: 0 10px;
+  margin: 15px 10px;
   position: relative;
   background-color: transparent;
   border-radius: 20px;
@@ -517,14 +515,15 @@
 
 .carousel-product-link {
   text-decoration: none;
+  width: 330px;
   color: rgb(255, 255, 255);
 }
 
 .carousel-product-body-img {
+  width: 100%;
   height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 20px;
+  text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 18px;
 }
@@ -542,6 +541,7 @@
 }
 .carousel-product-body-title h3 {
   height: 50px;
+  margin-top: 20px;
 }
 
 .carousel-product-body-text {
@@ -577,6 +577,7 @@
 
 .carousel-product-body-bot {
   display: flex;
+  margin-top: 10px;
   justify-content: space-between;
 }
 
@@ -1922,6 +1923,43 @@
   .social-link:hover {
     opacity: 0.5;
   }
+  .bestprice-container {
+    background-color: rgba(0, 0, 0, 0.637);
+    border-radius: 20px;
+    min-height: 450px;
+    padding: 10px 30px;
+    text-align: center;
+  }
+  .bestprice-text font {
+    font-size: 1.2rem;
+    margin-left: 0px;
+  }
+  .bestprice-text i {
+    margin-left: 5px;
+  }
+  .questions {
+    display: none;
+  }
+  .msiasus {
+    display: none;
+  }
+  .form-contain {
+    display: block;
+  }
+  .form-input-usage {
+    width: 330px;
+  }
+  .form-input-message {
+    width: 330px;
+    height: 100px;
+  }
+  .text-sell {
+    margin-left: 20px;
+    width: 350px;
+  }
+  .btn-submit {
+    margin-left: 120px;
+  }
 }
 .button-learn-more {
   width: 108px;
@@ -1949,12 +1987,6 @@
 
 .fix-height {
   height: 200px;
-}
-
-.text-center {
-  text-align: center;
-  width: 700px;
-  margin-left: 200px;
 }
 
 .none {

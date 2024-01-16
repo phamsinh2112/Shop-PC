@@ -14,6 +14,7 @@
         border-radius: 20px;  
     }
     
+    
 } 
 /* Mobile */ 
 @media (max-width: 739px) { 
@@ -319,5 +320,46 @@
         &:hover {
             opacity: 0.5;
         }
+    }  
+    .bestprice-container{
+        background-color: rgba(0, 0, 0, 0.637);
+        border-radius: 20px;
+        min-height: 450px;
+        padding: 10px 30px;
+        text-align: center;
+    }
+    .bestprice-text {
+        font {
+            font-size: 1.2rem;
+            margin-left: 0px;
+        }
+        i {
+            margin-left: 5px;
+        }
+    }
+    .questions{
+        display: none;
+    }
+    .msiasus{
+        display: none;
+    }
+    .form-contain{
+        display: block;
+    }
+    .form-input-usage {
+        width: 330px;
+    }
+    
+    .form-input-message {
+        width: 330px;
+        height: 100px;
+    }
+    .text-sell {
+        margin-left: 20px;
+        width: 350px;
+
+    }
+    .btn-submit {
+        margin-left: 120px;
     }
 }
